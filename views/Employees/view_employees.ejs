@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>HOME</h2>
+	
+	<a href="/employees/add">Add new Employee</a>
+	<br/><br/>
+	<table border="1">
+		<tr>
+			
+			<th>Name</th>
+			<th>Department</th>
+			<th>Salary</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+		<% for(var i = 0; i < empList.length; i++) { %>
+		<tr>
+			<td><%= empList[i].emp_name %></td>
+			<td><%= empList[i].dept_name %></td>
+			<td><%= empList[i].salary %></td>
+			<td><a href="/employees/edit/<%= empList[i].emp_id %>">Edit</a> </td>
+			<td> <a href="/employees/delete/<%= empList[i].emp_id %>">Delete</a></td>
+		</tr>
+		<% } %>
+	</table>
+</body>
+</html>

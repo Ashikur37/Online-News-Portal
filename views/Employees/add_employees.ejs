@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<form method="post">
+			<table>
+				<tr>
+					<td>Employee Name</td>
+					<td><input type="text" name="emp_name"></td>
+				</tr>
+				<tr>
+					<td>Departments</td>
+					<td><select name="department">
+						<% for(var i = 0; i < departmentList.length; i++) { %>
+							<option value="<%=departmentList[i].dept_id%>"><%= departmentList[i].dept_name %></option>
+						<% } %>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Salary</td>
+					<td><input type="text" name="salary"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="Add"></td>
+					
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>

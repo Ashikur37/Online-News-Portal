@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>EDIT</h2>
+	<a href="/home">Back</a>
+	<br/><br/>
+	<form method="post">
+		<input type="hidden" name="userId" value="<%= emp.emp_id%>">
+		<table>
+			<tr>
+				<td>EMPLOYEE NAME</td>
+				<td><input type="text" name="emp_name" value="<%= emp.emp_name%>" /></td>
+			</tr>
+			<tr>
+					<td>Departments</td>
+					<td><select name="department">
+						<% for(var i = 0; i < dept.length; i++) { %>
+							<option value="<%=dept[i].dept_id%>"
+							<% if(dept[i].dept_id===emp.emp_department)%>
+							<%{%>
+
+							selected="true"
+							<%}%>
+							> <%= dept[i].dept_name %></option>
+						<% } %>
+						</select>
+					</td>
+				</tr>
+			<tr>
+				<td>SALARY</td>
+				<td><input type="text" name="salary" value="<%= emp.salary%>" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Update" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
